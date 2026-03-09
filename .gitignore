@@ -1,0 +1,24 @@
+# Sistema
+.DS_Store
+Thumbs.db
+
+# VSCode
+.vscode/
+
+# Temporales
+*.log
+*.tmp
+*.bak
+*~
+
+# Cachés herramientas
+*.cache
+
+# PDFs de las UF
+UFs/
+
+
+# Documentos profesor
+*.docx
+*.aiken
+planificacion_docente/
