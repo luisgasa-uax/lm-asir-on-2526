@@ -1,0 +1,18 @@
+
+<!-- TAREA: Añade un tercer servidor -->
+
+<infraestructura>
+
+    <servidor>
+        <nombre>web01</nombre>
+        <ip>192.168.1.10</ip>
+        <sistema>Linux</sistema>
+    </servidor>
+
+    <servidor>
+        <nombre>db01</nombre>
+        <ip>192.168.1.20</ip>
+        <sistema>Linux</sistema>
+    </servidor>
+
+</infraestructura>
