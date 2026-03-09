@@ -1,0 +1,20 @@
+
+<!-- TAREA: 
+    Añadid:
+        - un tercer usuario
+        - un atributo `activo="true"`
+ -->
+
+<usuarios>
+
+    <usuario id="1">
+        <nombre>Ana</nombre>
+        <rol>admin</rol>
+    </usuario>
+
+    <usuario id="2">
+        <nombre>Luis</nombre>
+        <rol>tecnico</rol>
+    </usuario>
+
+</usuarios>
