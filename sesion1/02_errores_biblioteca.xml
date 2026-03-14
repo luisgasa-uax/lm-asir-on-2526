@@ -4,14 +4,15 @@
 <biblioteca>
 
     <libro>
-        <titulo>Dune</titulo>
-        <autor>Frank Herbert
+        <titulo>Dune</autor>
+        <autor>Frank Herbert</titulo>
         <anio>1965</anio>
-    </libro>
 
     <libro>
         <titulo>Fundación</titulo>
-        <autor>Isaac Asimov</autor>
-        <anio>1951</anio>
+            Isaac Asimov</autor>
+        <anio>1951<anio>
+    </libro>
+    </libro>
 
 </biblioteca>

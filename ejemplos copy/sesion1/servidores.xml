@@ -1,0 +1,65 @@
+<infraestrucura>
+
+    <!-- servidor: nombre, ip, sistema -->
+
+    <servidor>
+        <nombre>Server1</nombre>
+        <ip>192.168.1.25</ip>
+        <sistema>Windows Server</sistema>
+    </servidor>
+
+    <servidor>
+        <nombre>Ubuntu server</nombre>
+        <ip>192.168.1.100</ip>
+        <sistema>Ubuntu</sistema>
+    </servidor>
+
+    <!-- servidor: nombre, ip, sistema -->
+
+    <servidor>
+        <nombre>server</nombre>
+        <ip>192.168.10.0</ip>
+        <sistema>windows11</sistema>
+    </servidor>
+
+    <servidor tipo="web" fecha_instalacion="20260310">
+        <nombre>web01</nombre>
+        <ip>168.125.10.21</ip>
+        <sistema>Fedora</sistema><!-- <tipo>BBDD</tipo> -->
+    </servidor>
+
+    <servidor tipo="bbdd">
+        <nombre>bbdd01</nombre>
+        <ip>168.125.10.23</ip>
+        <sistema>Windows Server 2019</sistema>
+        <!-- <tipo>BBDD</tipo> -->
+    </servidor>
+
+
+
+
+
+
+    
+
+    <usuarios>
+        <usuario id="20" tipo="cliente" fecha_alta="10032026">
+            <nombre> pedro </nombre>
+            <!-- <id> 20 </id> -->
+            <web>wwww</web>
+            <rol>Contable</rol>
+            <tipo>se dio de baja </tipo>
+        </usuario>
+    </usuarios>
+
+
+
+<usuarios>
+    <usuario id="1">
+        <nombre>Jaime</nombre>
+        <rol>Administrador</rol>
+    </usuario>
+</usuarios>
+
+
+</infraestrucura>

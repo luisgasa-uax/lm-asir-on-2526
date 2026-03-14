@@ -1,0 +1,13 @@
+<biblioteca>
+    <libro>
+        <titulo>El nombre del viento</titulo>
+        <autor>Patrick Rothfuss</autor>
+        <anio>2007</anio>
+    </libro>
+
+    <libro>
+        <titulo>Dune</titulo>
+        <autor>Frank Herbert</autor>
+        <anio>1965</anio>
+    </libro>
+</biblioteca>
