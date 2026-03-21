@@ -24,3 +24,6 @@ UFs/
 planificacion_docente/
 
 .zip
+
+
+*.ignorar.*

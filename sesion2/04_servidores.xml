@@ -1,0 +1,22 @@
+ 
+<!-- crea un documento XSD que valide este XML -->
+
+<servidores xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+          xsi:noNamespaceSchemaLocation="servidores_marta.xsd"
+>
+    <servidor id="1">
+        <nombre>srv-web</nombre>
+        <ip>192.168.1.10</ip>
+        <ssoo tipo="linux">Ubuntu Server</ssoo>
+        <usuario>admin</usuario>
+        <puerto>57</puerto>
+    </servidor>
+
+    <servidor id="2">
+        <nombre>srv-db</nombre>
+        <ip>192.168.1.20</ip>
+        <ssoo>Windows Server</ssoo>
+        <usuario>root</usuario>
+        <password>1234</password>
+    </servidor>
+</servidores>

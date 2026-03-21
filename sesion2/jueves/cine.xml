@@ -1,0 +1,9 @@
+<cine>
+    <pelicula codigo="1234">
+        <titulo></titulo>
+        <duracion></duracion>
+        <clasificacion tipo="edad"></clasificacion>
+        <director></director>
+        <sala></sala>
+    </pelicula>
+</cine>

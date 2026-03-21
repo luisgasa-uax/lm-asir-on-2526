@@ -1,0 +1,38 @@
+<gimnasio 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="gimnasio.xsd"
+>
+    <sala numero-sala="1" musica="reggaeton">
+        <uso>Spinning</uso>
+        <capacidad>30</capacidad>
+        <hora-apertura>10</hora-apertura>
+        <hora-cierre>21</hora-cierre>
+        <monitor>Alisson</monitor>
+    </sala>
+
+    <sala numero-sala="2" musica="metal">
+        <uso>Crossfit</uso>
+        <capacidad>15</capacidad>
+        <hora-apertura>6</hora-apertura>
+        <hora-cierre>24</hora-cierre>
+    </sala>
+
+    <sala numero-sala="3" musica="salsa">
+        <uso>Zumba</uso>
+        <capacidad>25</capacidad>
+        <hora-apertura>16</hora-apertura>
+        <hora-cierre>22</hora-cierre>
+        <monitor>Ligia</monitor>
+        <monitor>Ramón</monitor>
+    </sala>
+</gimnasio>
+
+<!-- 
+Ampliamos: 
+    Vamos a añadir algunas cosillas y restricciones a mayores:
+    - cantidad máxima de elementos de un tipo
+    - cantidad mínima de elementos de un tipo
+    - añadir un atributo nuevo
+    - obligatoriedad de incorporar un atributo en un elemento. Por ejemplo el música de sala
+    - elemento con atributo y contenido simple
+-->

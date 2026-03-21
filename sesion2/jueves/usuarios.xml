@@ -1,0 +1,18 @@
+<usuarios 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="usuarios.xsd"
+>
+    <usuario id="2">
+        <nombre>Javier</nombre>
+        <edad>30</edad>
+        <email>javier@myuax.es</email>
+    </usuario>
+
+    <pepe>
+        <usuario id="1">
+            <nombre>Aída</nombre>
+            <edad>26</edad>
+            <email>aida@myuax.es</email>
+        </usuario>
+    </pepe>
+</usuarios>

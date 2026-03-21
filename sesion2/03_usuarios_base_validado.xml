@@ -1,0 +1,12 @@
+<usuarios 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="usuarios.xsd">
+    <usuario id="1">
+        <nombre>Ana</nombre>
+        <edad>25</edad>
+    </usuario>
+    <usuario id="2">
+        <nombre>Luis</nombre>
+        <edad>30</edad>
+    </usuario>
+</usuarios>
