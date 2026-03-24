@@ -1,0 +1,79 @@
+ 
+<!-- crea un documento XSD que valide este XML -->
+
+<servidores xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+      xsi:noNamespaceSchemaLocation="servidores.xsd"
+>
+  <servidor id="srv-1">
+    <nombre>srv-web</nombre>
+    <ip>192.168.1.10</ip>
+    <ssoo tipo="linux" version="24.04.4 LTS">Ubuntu Server</ssoo>
+    <!-- <usuario>admin</usuario> -->
+    <usuario>
+      <root/>
+    </usuario>
+    <puerto>57</puerto>
+    <fechaInstalacion>2026-03-04</fechaInstalacion> <!-- YYYY-MM-DD -->
+    <urlServidor>192.168.0.8</urlServidor>
+  </servidor>
+
+  <servidor id="srv-2">
+    <nombre>srv-db</nombre>
+    <ip>192.168.1.20</ip>
+    <ssoo version="Server 2025">Windows Server</ssoo>
+    <!-- <usuario>root</usuario> --> <!-- O root o Admin --> 
+    <usuario>
+      <admin/>
+    </usuario>
+    <password>1234</password>
+    <puerto>65</puerto>
+    <fechaInstalacion>2026-03-24</fechaInstalacion>
+    <urlServidor>192.168.0.5</urlServidor>
+  </servidor>
+
+  <servidor id="asdlkfjasdfasd">
+    <nombre>svr-remoteDesktop</nombre>
+    <ip>192.168.1.7</ip>
+    <ssoo version="Server 2025">Windows Server</ssoo>
+    <!-- <usuario>root</usuario> -->
+    <usuario>
+      <admin/>
+      <!-- <admin></admin>  esta opción es igual de válida -->
+    </usuario>
+    <password>1234</password>
+    <puerto>3200</puerto>
+    <fechaInstalacion>2026-02-24</fechaInstalacion>
+    <urlServidor>http://escritorio-remoto.local</urlServidor>
+    
+    <usuarios>
+      <usuario>
+        <nombre>Marta</nombre>
+        <rol>SysAdmin</rol>
+        <activo>true</activo>
+        <autenticacion>
+          <token>234567890</token> 
+          <!-- <password>aisoduakñlsdjf ña</password> -->
+        </autenticacion>
+      </usuario>
+
+      <usuario>
+        <activo>false</activo>
+        <rol>Developer</rol>
+        <nombre>Antonio</nombre>
+        <autenticacion>
+          <password>ñalsdjlfkas-dfñaos</password> 
+        </autenticacion>
+      </usuario>
+
+      <usuario>
+        <activo>false</activo>
+        <rol>Security</rol>
+        <nombre>Alberto</nombre>
+        <autenticacion>
+          <password>ñalsdjlfkas-dfñaos</password> 
+        </autenticacion>
+      </usuario>
+    </usuarios>
+  </servidor>
+
+</servidores>
