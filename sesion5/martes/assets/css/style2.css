@@ -1,0 +1,504 @@
+/* =============================================== */
+/* DECLARACIÓN DE VARIABLES CSS (PALETA DE COLORES) */
+/* =============================================== */
+/* Las variables se declaran en :root para estar disponibles globalmente */
+:root {
+  /* ===== COLORES PRINCIPALES ===== */
+  --color-primary: #7c3aed;        /* Morado vibrante - color principal/marca */
+  --color-primary-dark: #5b21b6;    /* Morado oscuro - para hovers y estados activos */
+  --color-primary-light: #a78bfa;   /* Morado claro - para acentos y detalles */
+  
+  /* ===== COLORES SECUNDARIOS ===== */
+  --color-secondary: #06b6d4;       /* Cyan - color complementario */
+  --color-accent: #f59e0b;          /* Ámbar - para elementos que requieren atención */
+  
+  /* ===== COLORES NEUTRALES (FONDO Y TEXTO) ===== */
+  --color-bg: #0f172a;              /* Azul marino oscuro - fondo principal */
+  --color-bg-card: #1e293b;         /* Azul marino claro - fondo de tarjetas/menú */
+  --color-bg-hover: #334155;        /* Gris azulado - hover de elementos */
+  --color-text: #f1f5f9;            /* Blanco grisáceo - texto principal */
+  --color-text-light: #94a3b8;      /* Gris medio - texto secundario */
+  --color-border: #334155;          /* Gris azulado - bordes y separadores */
+  
+  /* ===== COLORES DE ESTADO ===== */
+  --color-success: #10b981;         /* Verde - mensajes de éxito */
+  --color-warning: #f59e0b;         /* Naranja - mensajes de advertencia */
+  --color-error: #ef4444;           /* Rojo - mensajes de error */
+  
+  /* ===== SOMBRAS ===== */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);      /* Sombra pequeña */
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4);    /* Sombra mediana */
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5);  /* Sombra grande */
+  
+  /* ===== DIMENSIONES ===== */
+  --header-height: 70px;            /* Altura fija del header */
+  --max-width: 1200px;              /* Ancho máximo del contenido */
+  --border-radius: 12px;            /* Radio de borde estándar */
+  --transition: all 0.3s ease;      /* Transición estándar para animaciones */
+}
+
+/* =============================================== */
+/* RESET Y ESTILOS BASE */
+/* =============================================== */
+
+/* Selector universal (*) - resetea márgenes y paddings de TODOS los elementos */
+* {
+  margin: 0;          /* Elimina márgenes por defecto */
+  padding: 0;         /* Elimina paddings por defecto */
+  box-sizing: border-box;  /* El padding y border NO aumentan el ancho total del elemento */
+}
+
+/* Estilos del cuerpo de la página */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  /* Fuente profesional */
+  background-color: var(--color-bg);      /* Fondo oscuro usando variable */
+  color: var(--color-text);               /* Texto claro usando variable */
+  line-height: 1.6;                       /* Altura de línea para mejor legibilidad (1.6 = 160%) */
+  padding-top: var(--header-height);      /* Espacio superior para que el header fijo no tape contenido */
+}
+
+/* =============================================== */
+/* HEADER Y NAVEGACIÓN (FIJOS EN LA PARTE SUPERIOR) */
+/* =============================================== */
+
+/* Header fijo - siempre visible al hacer scroll */
+header {
+  position: fixed;            /* Posicionamiento fijo relativo a la ventana */
+  top: 0;                     /* Pegado al borde superior */
+  left: 0;                    /* Pegado al borde izquierdo */
+  right: 0;                   /* Pegado al borde derecho */
+  background-color: var(--color-bg-card);  /* Fondo de la tarjeta */
+  border-bottom: 1px solid var(--color-border);  /* Línea separadora inferior */
+  box-shadow: var(--shadow-md);            /* Sombra para dar profundidad */
+  z-index: 1000;              /* Z-index alto para que esté por encima de todo */
+  height: var(--header-height);  /* Altura fija definida en variable */
+}
+
+/* Contenedor de navegación - usa Flexbox para alinear elementos */
+nav {
+  max-width: var(--max-width);  /* Ancho máximo centrado */
+  margin: 0 auto;               /* Centrado horizontal automático */
+  padding: 0 20px;              /* Padding lateral para separación en móviles */
+  height: 100%;                 /* Altura completa del header */
+  display: flex;                /* Display flex para alinear horizontalmente */
+  align-items: center;          /* Centra verticalmente los elementos */
+  justify-content: space-between; /* Espacio entre logo y menú (uno a izquierda, otro a derecha) */
+  gap: 20px;                    /* Espacio mínimo entre elementos */
+}
+
+/* ===== LOGO INTEGRADO EN EL MENÚ ===== */
+.logo-container {
+  display: flex;        /* Flex para alinear logo y texto horizontalmente */
+  align-items: center;  /* Centrado vertical */
+  gap: 12px;            /* Espacio entre logo y texto */
+  flex-shrink: 0;       /* Evita que el contenedor se encoja en pantallas pequeñas */
+}
+
+/* Estilos de la imagen del logo */
+#logo {
+  width: 45px;          /* Ancho fijo */
+  height: 45px;         /* Alto fijo (mismo que ancho para que sea cuadrado) */
+  object-fit: cover;    /* La imagen cubre el contenedor sin distorsionarse */
+  border-radius: 10px;  /* Bordes redondeados */
+  transition: transform 0.3s ease;  /* Transición suave para animaciones */
+}
+
+/* Efecto hover (al pasar el ratón) sobre el logo */
+#logo:hover {
+  transform: scale(1.05);  /* Aumenta ligeramente el tamaño (5% más grande) */
+}
+
+/* Texto junto al logo */
+.logo-text {
+  font-size: 1.3em;         /* Tamaño relativo (1.3 = 130% del tamaño base) */
+  font-weight: 700;         /* Grosor de la fuente (negrita) */
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  -webkit-background-clip: text;  /* El fondo se recorta con la forma del texto (webkit) */
+  background-clip: text;          /* El fondo se recorta con la forma del texto */
+  color: transparent;             /* El texto es transparente para ver el gradiente */
+  letter-spacing: 1px;            /* Espacio entre letras */
+}
+
+/* ===== MENÚ DE NAVEGACIÓN ===== */
+nav ul {
+  display: flex;        /* Flexbox para menú horizontal */
+  gap: 8px;             /* Espacio entre elementos del menú */
+  align-items: center;  /* Centrado vertical */
+  list-style: none;     /* Elimina los puntos/bullets de la lista */
+}
+
+nav ul li {
+  list-style: none;     /* Elimina puntos (redundante pero seguro) */
+}
+
+/* Estilos de los enlaces del menú */
+.enlace-menu {
+  color: var(--color-text);        /* Color del texto usando variable */
+  text-decoration: none;           /* Elimina subrayado por defecto */
+  font-weight: 500;                /* Grosor medio (seminegrita) */
+  padding: 8px 16px;               /* Espaciado interno: arriba/abajo 8px, laterales 16px */
+  border-radius: 8px;              /* Bordes redondeados */
+  transition: var(--transition);    /* Transición suave usando variable */
+  display: inline-block;            /* Permite padding y margin correctos */
+  font-size: 0.95em;               /* Tamaño ligeramente menor al base */
+}
+
+/* Efecto hover sobre enlaces del menú */
+.enlace-menu:hover {
+  background-color: var(--color-primary);  /* Fondo con color principal */
+  color: white;                            /* Texto blanco */
+  transform: translateY(-2px);             /* Eleva ligeramente el elemento */
+}
+
+/* ===== BOTÓN HAMBURGUESA (oculto en desktop) ===== */
+.menu-toggle {
+  display: none;        /* Oculto por defecto (solo visible en móvil) */
+  flex-direction: column;  /* Las rayas se apilan verticalmente */
+  gap: 6px;             /* Espacio entre rayas */
+  cursor: pointer;      /* Cambia el cursor a mano */
+  padding: 10px;        /* Espaciado interno para área clickeable */
+}
+
+/* Cada raya del botón hamburguesa */
+.menu-toggle span {
+  width: 25px;          /* Ancho de cada raya */
+  height: 3px;          /* Alto (grosor) de cada raya */
+  background-color: var(--color-text);  /* Color de las rayas */
+  border-radius: 3px;   /* Bordes redondeados */
+  transition: var(--transition);  /* Transición suave */
+}
+
+/* =============================================== */
+/* CONTENIDO PRINCIPAL */
+/* =============================================== */
+
+/* Contenedor principal del contenido */
+main {
+  max-width: var(--max-width);  /* Ancho máximo centrado */
+  margin: 0 auto;               /* Centrado horizontal */
+  padding: 40px 20px;           /* Espaciado: 40px arriba/abajo, 20px laterales */
+}
+
+/* ===== TIPOGRAFÍA ===== */
+
+/* Título principal h1 */
+h1 {
+  text-align: center;   /* Centrado horizontal */
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;   /* Gradiente aplicado al texto */
+  font-size: 2.5em;     /* Tamaño grande (2.5 = 250%) */
+  margin-bottom: 10px;  /* Espacio inferior */
+}
+
+/* Subtítulos h2 - todos con el mismo estilo */
+h2 {
+  color: white;         /* Texto blanco */
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  padding: 12px 20px;   /* Espaciado interno */
+  border-radius: var(--border-radius);  /* Bordes redondeados */
+  margin-top: 40px;     /* Espacio superior */
+  margin-bottom: 20px;  /* Espacio inferior */
+  border: none;         /* Sin borde */
+}
+
+/* Títulos h3 */
+h3 {
+  color: var(--color-primary-light);  /* Color morado claro */
+  margin-top: 20px;     /* Espacio superior */
+  margin-bottom: 10px;  /* Espacio inferior */
+}
+
+/* Párrafos */
+p {
+  color: var(--color-text);  /* Color del texto principal */
+  margin-bottom: 16px;       /* Espacio inferior entre párrafos */
+}
+
+/* Eslogan - texto destacado */
+#eslogan {
+  font-style: italic;        /* Texto en cursiva */
+  font-size: 1.2em;          /* Tamaño ligeramente mayor */
+  color: var(--color-primary-light);  /* Color morado claro */
+  text-align: center;        /* Centrado */
+  padding: 20px;             /* Espaciado interno */
+  background: var(--color-bg-card);  /* Fondo tipo tarjeta */
+  border-radius: var(--border-radius);  /* Bordes redondeados */
+  margin: 20px 0;            /* Margen vertical */
+  border-left: 4px solid var(--color-primary);  /* Borde izquierdo decorativo */
+}
+
+/* ===== ENLACES ===== */
+a {
+  color: var(--color-primary-light);  /* Color morado claro */
+  text-decoration: none;              /* Sin subrayado */
+  transition: color 0.3s ease;       /* Transición suave para el color */
+}
+
+/* Hover de enlaces */
+a:hover {
+  color: var(--color-primary);  /* Cambia a morado principal */
+}
+
+/* ===== TABLA DE PRECIOS ===== */
+table {
+  width: 100%;                  /* Ancho completo del contenedor */
+  border-collapse: collapse;    /* Las celdas comparten bordes (sin espacios) */
+  background-color: var(--color-bg-card);  /* Fondo tipo tarjeta */
+  border-radius: var(--border-radius);      /* Bordes redondeados */
+  overflow: hidden;             /* Oculta el desbordamiento (mantiene bordes redondeados) */
+  box-shadow: var(--shadow-md); /* Sombra mediana */
+  margin: 20px 0;               /* Margen vertical */
+}
+
+/* Celdas de tabla (tanto encabezado como datos) */
+th, td {
+  padding: 12px 16px;           /* Espaciado interno */
+  text-align: left;             /* Texto alineado a la izquierda */
+  border-bottom: 1px solid var(--color-border);  /* Borde inferior separador */
+}
+
+/* Encabezados de tabla */
+th {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  color: white;                 /* Texto blanco */
+  font-weight: 600;             /* Negrita */
+}
+
+/* Hover sobre filas de tabla */
+tr:hover {
+  background-color: var(--color-bg-hover);  /* Fondo más claro al pasar ratón */
+}
+
+/* Pie de tabla */
+tfoot {
+  background-color: var(--color-bg-hover);  /* Fondo ligeramente diferente */
+  font-weight: bold;             /* Texto en negrita */
+}
+
+/* ===== COLABORADORES ===== */
+.colaborador {
+  width: 200px;                  /* Ancho fijo */
+  display: inline-block;         /* Se comporta como bloque pero en línea */
+  margin: 10px;                  /* Margen externo */
+  padding: 20px;                 /* Espaciado interno */
+  background-color: var(--color-bg-card);  /* Fondo tipo tarjeta */
+  border-radius: var(--border-radius);      /* Bordes redondeados */
+  box-shadow: var(--shadow-sm);  /* Sombra pequeña */
+  transition: var(--transition);  /* Transición suave */
+  vertical-align: top;           /* Alineación vertical superior */
+}
+
+/* Hover sobre colaboradores */
+.colaborador:hover {
+  transform: translateY(-5px);   /* Eleva el elemento */
+  box-shadow: var(--shadow-lg);  /* Sombra más grande */
+}
+
+/* Imágenes dentro de colaboradores */
+.colaborador img {
+  width: 100%;        /* Ancho completo del contenedor */
+  height: auto;       /* Altura automática (mantiene proporción) */
+  border-radius: 8px; /* Bordes redondeados */
+}
+
+/* ===== FORMULARIO DE CONTACTO ===== */
+form {
+  background-color: var(--color-bg-card);  /* Fondo tipo tarjeta */
+  padding: 30px;                /* Espaciado interno */
+  border-radius: var(--border-radius);      /* Bordes redondeados */
+  box-shadow: var(--shadow-md); /* Sombra mediana */
+  max-width: 600px;             /* Ancho máximo para mejor legibilidad */
+  margin: 20px 0;               /* Margen vertical */
+}
+
+/* Etiquetas de formulario */
+label {
+  display: inline-block;        /* Permite márgenes y padding */
+  margin: 10px 0 5px;           /* Margen: arriba10px, derecha0, abajo5px, izquierda0 */
+  color: var(--color-text);     /* Color del texto */
+  font-weight: 500;             /* Seminegrita */
+}
+
+/* Campos de texto y email */
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;                  /* Ancho completo */
+  padding: 10px;                /* Espaciado interno */
+  margin: 5px 0 15px;           /* Márgenes: arriba5, derecha0, abajo15, izquierda0 */
+  border: 1px solid var(--color-border);  /* Borde con color de variable */
+  border-radius: 8px;           /* Bordes redondeados */
+  font-family: inherit;         /* Hereda la fuente del body */
+  background-color: var(--color-bg);  /* Fondo del body para contraste */
+  color: var(--color-text);     /* Color del texto */
+  transition: var(--transition); /* Transición suave */
+}
+
+/* Efecto focus (cuando el campo está seleccionado) */
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  outline: none;                /* Elimina el borde de enfoque por defecto */
+  border-color: var(--color-primary);  /* Borde con color principal */
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);  /* Sombra externa sutil */
+}
+
+/* Botones de radio */
+input[type="radio"] {
+  margin: 10px 5px 10px 0;      /* Márgenes personalizados */
+  accent-color: var(--color-primary);  /* Color del botón de radio (moderno) */
+}
+
+/* Botón de envío */
+button[type="submit"] {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  color: white;                 /* Texto blanco */
+  border: none;                 /* Sin borde */
+  padding: 12px 30px;           /* Espaciado interno */
+  border-radius: 8px;           /* Bordes redondeados */
+  font-size: 16px;              /* Tamaño de fuente */
+  font-weight: 600;             /* Negrita */
+  cursor: pointer;              /* Cursor tipo mano */
+  transition: var(--transition); /* Transición suave */
+  margin-top: 20px;             /* Margen superior */
+}
+
+/* Hover del botón */
+button[type="submit"]:hover {
+  transform: translateY(-2px);  /* Eleva ligeramente */
+  box-shadow: var(--shadow-md); /* Añade sombra */
+}
+
+/* Active (cuando se hace clic) */
+button[type="submit"]:active {
+  transform: translateY(0);     /* Vuelve a posición original */
+}
+
+/* ===== LISTAS ===== */
+ul, ol {
+  margin: 16px 0;      /* Margen vertical */
+  padding-left: 24px;  /* Sangría izquierda para bullets/números */
+}
+
+li {
+  margin: 8px 0;       /* Margen vertical entre items */
+  color: var(--color-text);  /* Color del texto */
+}
+
+/* ===== IMAGEN DEL TÉCNICO ===== */
+/* Selector de atributo: selecciona imágenes cuyo src contenga "ssii" */
+/* body > img[src*="ssii"] { */
+img#tecnico {
+  max-width: 100%;          /* Ancho máximo del contenedor */
+  height: auto;             /* Altura automática (mantiene proporción) */
+  border-radius: var(--border-radius);  /* Bordes redondeados */
+  box-shadow: var(--shadow-md);         /* Sombra mediana */
+  margin: 20px 0;           /* Margen vertical */
+  display: block;           /* Se comporta como bloque */
+}
+
+/* ===== SCROLL SUAVE ===== */
+html {
+  scroll-behavior: smooth;              /* Desplazamiento suave al hacer clic en anclas */
+  scroll-padding-top: var(--header-height);  /* Espacio superior al hacer scroll para no tapar con header fijo */
+}
+
+/* =============================================== */
+/* MEDIA QUERIES (RESPONSIVE DESIGN) */
+/* =============================================== */
+
+/* Pantallas menores a 968px (tablets y móviles) */
+@media (max-width: 968px) {
+  
+  /* Mostrar botón hamburguesa */
+  .menu-toggle {
+    display: flex;          /* Visible en móvil */
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  /* Rayas del botón hamburguesa */
+  .menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-text);
+    border-radius: 3px;
+    transition: var(--transition);
+  }
+  
+  /* Menú oculto por defecto (fuera de la pantalla) */
+  nav ul {
+    position: fixed;                      /* Posición fija relativa a la ventana */
+    top: var(--header-height);            /* Debajo del header */
+    left: -100%;                          /* Oculto fuera de la pantalla izquierda */
+    width: 100%;                          /* Ancho completo */
+    height: calc(100vh - var(--header-height));  /* Alto completo menos header */
+    background-color: var(--color-bg-card);      /* Fondo tipo tarjeta */
+    flex-direction: column;               /* Columna vertical */
+    justify-content: flex-start;          /* Alineación superior */
+    padding: 40px 20px;                   /* Espaciado interno */
+    transition: left 0.3s ease;           /* Transición suave al aparecer/desaparecer */
+    box-shadow: var(--shadow-lg);          /* Sombra grande */
+    gap: 20px;                            /* Espacio entre items */
+    overflow-y: auto;                     /* Scroll si hay muchos items */
+  }
+  
+  /* Menú activo (visible) */
+  nav ul.active {
+    left: 0;          /* Se mueve a la posición visible */
+  }
+  
+  /* Enlaces del menú en móvil */
+  .enlace-menu {
+    font-size: 1.1em;     /* Texto ligeramente más grande */
+    padding: 12px 20px;   /* Más área clickeable */
+    width: 100%;          /* Ancho completo */
+    text-align: center;   /* Texto centrado */
+  }
+}
+
+/* Pantallas menores a 768px (móviles pequeños) */
+@media (max-width: 768px) {
+  /* Ajustar altura del header */
+  body {
+    padding-top: 60px;    /* Menos espacio porque header más bajo */
+  }
+  
+  /* Redefinir variable de altura del header */
+  :root {
+    --header-height: 60px;  /* Header más bajo en móvil */
+  }
+  
+  /* Título principal más pequeño */
+  h1 {
+    font-size: 1.8em;     /* 1.8 = 180% del tamaño base */
+  }
+  
+  /* Subtítulos más pequeños */
+  h2 {
+    font-size: 1.3em;     /* Tamaño reducido */
+    padding: 10px 15px;   /* Padding reducido */
+  }
+  
+  /* Colaboradores: 2 por fila */
+  .colaborador {
+    width: calc(50% - 20px);  /* 50% menos márgenes */
+  }
+}
+
+/* Pantallas menores a 480px (móviles muy pequeños) */
+@media (max-width: 480px) {
+  /* Colaboradores: 1 por fila */
+  .colaborador {
+    width: calc(100% - 20px);  /* Ancho completo */
+  }
+  
+  /* Padding del nav reducido */
+  nav {
+    padding: 0 15px;  /* Menos espacio lateral */
+  }
+}

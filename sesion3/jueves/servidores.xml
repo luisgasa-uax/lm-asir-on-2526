@@ -1,0 +1,44 @@
+<servidores 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="servidores.xsd"
+>
+    <servidor id="srv01">
+        <nombre>srv-web</nombre>
+        <ip>192.168.1.10</ip>
+        <ssoo tipo="linux">Ubuntu Server</ssoo>
+        <usuario>
+          <!-- <Ligia /> -->
+          <rol>CISO</rol>
+          <nombre>Ligia</nombre>
+          <activo>true</activo>
+          <autenticacion>
+            <password>123456fghj</password>
+          </autenticacion>
+        </usuario>
+        <password>12345678901234567890</password>
+        <puerto>80</puerto>
+        <fecha-instalacion>2026-03-26</fecha-instalacion>
+        <hora-instalacion>18:38:00</hora-instalacion>
+        <web-administracion>https://srv-web.local/index.php</web-administracion>
+    </servidor>
+    
+    <servidor id="srv02">
+        <nombre>srv-db</nombre>
+        <ip>192.168.1.20</ip>
+        <ssoo>Windows Server</ssoo>
+        <usuario>
+          <!-- <root></root> -->
+          <activo>true</activo>
+           <rol></rol>
+          <nombre>Ligia</nombre>
+          <autenticacion>
+            <password>123456fghj</password>
+          </autenticacion>
+        </usuario>
+        <password>1234abcd</password>
+        <puerto>58</puerto>
+        <fecha-instalacion>3152-02-29</fecha-instalacion>
+        <hora-instalacion>08:08:07</hora-instalacion>
+        <web-administracion>http://192.168.1.8</web-administracion>
+    </servidor>
+</servidores>

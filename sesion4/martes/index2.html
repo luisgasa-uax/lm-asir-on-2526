@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Servicios Informáticos ASIR</title>
+    <link rel="stylesheet" href="assets/css/style2.css" />
+  </head>
+  <body>
+    <!-- Header o encabezado con logo integrado en el menú -->
+    <header>
+      <nav>
+        <div class="logo-container">
+          <img id="logo" src="./assets/img/logo.avif" alt="Logo de ASIR" />
+          <span class="logo-text">ASIR</span>
+        </div>
+
+        <div class="menu-toggle" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <ul id="menu">
+          <li><a class="enlace-menu" href="#">Inicio</a></li>
+          <li><a class="enlace-menu" href="#servicios">Servicios</a></li>
+          <li><a class="enlace-menu" href="#precios">Precios</a></li>
+          <li>
+            <a class="enlace-menu" href="#colaboradores">Colaboradores</a>
+          </li>
+          <li><a class="enlace-menu" href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Contenido principal -->
+      <h1>ASIR</h1>
+      <h2>Servicios Informáticos</h2>
+
+      <p id="eslogan">
+        Soluciones rápidas y eficaces para tus sistemas informáticos.
+      </p>
+
+      <p>Esto es un párrafo normal y corriente.</p>
+
+      <!-- Esto es un link a otra página -->
+      <a
+        href="https://codeshare.io/26-asir-on"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Visita nuestro CodeShare</a
+      >
+
+      <br />
+      <!-- Esto es un salto de línea -->
+
+      <img id="tecnico"
+        src="./assets/img/ssii.jpg"
+        alt="Foto de un técnico informático trabajando en un ordenador"
+      />
+      <!-- Esto es una imagen con su texto alternativo -->
+
+      <br />
+
+      <section id="seccion-servicios">
+        <h2 id="servicios">Servicios</h2>
+        <p class="contenido-seccion-servicios">
+          Ofrecemos una amplia gama de servicios informáticos para satisfacer
+          las necesidades de tu negocio.
+        </p>
+        <ul class="contenido-seccion-servicios">
+          <li>Reparación de equipos informáticos</li>
+          <li>Mantenimiento de redes</li>
+          <li>Instalación de software</li>
+          <li>Soporte técnico remoto</li>
+          <li>Asesoría técnica</li>
+        </ul>
+      </section>
+
+      <section id="seccion-precios">
+        <h2 id="precios">Precios</h2>
+        <table border="1">
+          <thead>
+            <tr>
+              <th><strong>Servicio</strong></th>
+              <th><em>Precio</em></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Reparación de equipos informáticos</td>
+              <td>50€/hora</td>
+            </tr>
+
+            <tr>
+              <td>Mantenimiento de redes</td>
+              <td>60€/hora</td>
+            </tr>
+
+            <tr>
+              <td>Instalación de software</td>
+              <td>40€/hora</td>
+            </tr>
+
+            <tr>
+              <td>Soporte técnico remoto</td>
+              <td>30€/hora</td>
+            </tr>
+
+            <tr>
+              <td>Asesoría técnica</td>
+              <td>100€/hora</td>
+            </tr>
+          </tbody>
+
+          <tfoot>
+            <tr>
+              <td><strong>Total</strong></td>
+              <td><em>Varía según el servicio</em></td>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
+
+      <section id="seccion-colaboradores">
+        <h2 id="colaboradores">Colaboradores</h2>
+
+        <div class="colaborador">
+          <a href="https://www.uax.com" target="_blank" rel="noopener noreferrer">
+            <img
+              src="./assets/img/uax_logo.webp"
+              alt="Logo de la Universidad Alfonso X el Sabio"
+            />
+          </a>
+        </div>
+
+        <div class="colaborador">
+          <a
+            href="https://code.visualstudio.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="./assets/img/vscode_logo.webp"
+              alt="Logo de Visual Studio Code"
+            />
+          </a>
+        </div>
+      </section>
+
+      <section id="seccion-contacto">
+        <h2 id="contacto">Contacto</h2>
+        <p>
+          Si deseas más información sobre nuestros servicios, no dudes en
+          contactarnos:
+        </p>
+
+        <form action="contacto.php" method="get">
+          <label for="nombre_id">Nombre: *</label>
+          <input type="text" name="nombre" id="nombre_id" required />
+
+          <br />
+
+          <label for="email">Email: *</label>
+          <input type="email" name="email" id="email" required />
+
+          <br />
+          <h3>Servicio de interés</h3>
+
+          <input type="radio" name="servicio" id="reparacion" value="reparacion" />
+          <label for="reparacion">Reparación de equipos</label>
+          <br />
+          <input type="radio" name="servicio" id="mantenimiento" value="mantenimiento" />
+          <label for="mantenimiento">Mantenimiento de redes</label>
+          <br />
+          <input type="radio" name="servicio" id="instalacion" value="instalacion" />
+          <label for="instalacion">Instalación de software</label>
+          <br />
+          <input type="radio" name="servicio" id="soporte" value="soporte" />
+          <label for="soporte">Soporte técnico remoto</label>
+          <br />
+          <input type="radio" name="servicio" id="asesoria" value="asesoria" />
+          <label for="asesoria">Asesoría técnica</label>
+
+          <br />
+
+          <h3>Presupuesto:</h3>
+
+          <input type="radio" name="presupuesto" id="hasta_50" value="hasta_50" />
+          <label for="hasta_50">hasta 50€</label>
+          <br />
+          <input type="radio" name="presupuesto" id="hasta_100" value="hasta_100" />
+          <label for="hasta_100">hasta 100€</label>
+          <br />
+          <input type="radio" name="presupuesto" id="hasta_1000" value="hasta_1000" />
+          <label for="hasta_1000">hasta 1000€</label>
+          <br />
+
+          <label for="mensaje">Mensaje: </label>
+          <textarea name="mensaje" id="mensaje" rows="4" cols="50"></textarea>
+
+          <br />
+
+          <button type="submit">Contactar</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- Script para el menú hamburguesa -->
+    <script>
+      const menuToggle = document.getElementById("menuToggle");
+      const menu = document.getElementById("menu");
+
+      if (menuToggle && menu) {
+        menuToggle.addEventListener("click", () => {
+          menu.classList.toggle("active");
+        });
+
+        // Cerrar menú al hacer click en un enlace
+        const links = menu.querySelectorAll("a");
+        links.forEach((link) => {
+          link.addEventListener("click", () => {
+            menu.classList.remove("active");
+          });
+        });
+      }
+    </script>
+  </body>
+</html>

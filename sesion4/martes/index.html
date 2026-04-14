@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Servicios Informáticos ASIR</title>
+
+    <!-- conectamos el archivo de estilo -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body>
+    <img id="logo" src="./assets/img/logo.avif" alt="Logo de ASIR" />
+
+<!-- Comenzamos con el menú -->
+    <nav> <!-- denota que es un menú -->
+      <ul>
+        <li><a class="enlace-menu" href="#">Inicio</a></li>
+        <li><a class="enlace-menu" href="#servicios">Servicios</a></li>
+        <li><a class="enlace-menu" href="#precios">Precios</a></li>
+        <li><a class="enlace-menu" href="#colaboradores">Colaboradores maravillosos y estupendásticos</a></li>
+        <li><a class="enlace-menu" href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <h1>ASIR</h1>
+    <!-- Esto es el título principal. Sólo puede haber uno por documento -->
+    <h2>Servicios Informáticos</h2>
+    <!-- Esto es un subtítulo de 2º nivel -->
+    <!-- Disponemos de títulos desde h1 hasta h6 
+    Cada nivel de título tiene que ser utilizado de forma jerárquica, es decir, no se puede usar un h3 sin haber usado antes un h2, y así sucesivamente. 
+  -->
+
+    <p id="eslogan">
+      Soluciones rápidas y eficaces para tus sistemas informáticos.
+    </p>
+    <!-- Esto es un párrafo de texto -->
+
+    <p>Esto es un párrafo normal y corriente.</p>
+
+    
+
+    <!-- Esto es un link a otra página -->
+    <a
+      href="https://codeshare.io/26-asir-on"
+      target="_blank"
+      rel="noopener noreferrer"
+      >Visita nuesto CodeShare</a
+    >
+
+    <br />
+    <!-- Esto es un salto de línea -->
+
+    <img
+      src="./assets/img/ssii.jpg"
+      alt="Foto de un técnico informático trabajando en un ordenador"
+    />
+    <!-- Esto es una imagen con su texto alternativo -->
+
+    <br />
+
+    <h2 id="servicios">Servicios</h2>
+    <p>
+      Ofrecemos una amplia gama de servicios informáticos para satisfacer las
+      necesidades de tu negocio.
+    </p>
+    <!-- <ol type="1" start="57">  Esto es una lista ORDENADA -->
+    <ul>
+      <!-- Esto es una lista NO ORDENADA -->
+      <li>Reparación de equipos informáticos</li>
+      <!-- Esto es un elemento de la lista -->
+      <li>Mantenimiento de redes</li>
+      <li>Instalación de software</li>
+      <li>Soporte técnico remoto</li>
+      <li>Asesoría técnica</li>
+    </ul>
+
+    <h2 id="precios">Precios</h2>
+    <table border="1">
+      <thead>
+        <tr>
+          <!-- Esto es una fila de la tabla -->
+          <th><strong>Servicio</strong></th>
+          <th><em>Precio</em></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Reparación de equipos informáticos</td>
+          <td>50€/hora</td>
+        </tr>
+
+        <tr>
+          <td>Mantenimiento de redes</td>
+          <td>60€/hora</td>
+        </tr>
+
+        <tr>
+          <td>Instalación de software</td>
+          <td>40€/hora</td>
+        </tr>
+
+        <tr>
+          <td>Soporte técnico remoto</td>
+          <td>30€/hora</td>
+        </tr>
+
+        <tr>
+          <td>Asesoría técnica</td>
+          <td>100€/hora</td>
+        </tr>
+      </tbody>
+
+      <tfoot>
+        <tr>
+          <td><strong>Total</strong></td>
+          <td><em>Varía según el servicio</em></td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <br />
+
+    <h2 id="colaboradores">Colaboradores</h2>
+
+    <div class="colaborador">
+      <a href="https://www.uax.com" target="_blank" rel="noopener noreferrer">
+        <img
+          src="./assets/img/uax_logo.webp"
+          alt="Logo de la Universidad Alfonso X el Sabio"
+        />
+      </a>
+    </div>
+
+    <div class="colaborador">
+      <a
+        href="https://code.visualstudio.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="./assets/img/vscode_logo.webp"
+          alt="Logo de Visual Studio Code"
+        />
+      </a>
+    </div>
+
+    <br />
+
+    <h2 id="contacto">Contacto</h2>
+    <p>
+      Si deseas más información sobre nuestros servicios, no dudes en
+      contactarnos:
+    </p>
+
+    <form action="contacto.php" method="get">
+      <label for="nombre_id">Nombre: *</label>
+      <input type="text" name="nombre" id="nombre_id" required />
+
+      <br />
+
+      <label for="email">Email: *</label>
+      <input type="email" name="email" id="email" required />
+
+      <br />
+      <h3>Servicio de interés</h3>
+
+      <input type="radio" name="servicio" id="reparacion" value="reparacion" />
+      <label for="reparacion">Reparación de equipos</label>
+      <br />
+      <input
+        type="radio"
+        name="servicio"
+        id="mantenimiento"
+        value="mantenimiento"
+      />
+      <label for="mantenimiento">Mantenimiento de redes</label>
+      <br />
+      <input
+        type="radio"
+        name="servicio"
+        id="instalacion"
+        value="instalacion"
+      />
+      <label for="instalacion">Instalación de software</label>
+      <br />
+      <input type="radio" name="servicio" id="soporte" value="soporte" />
+      <label for="soporte">Soporte técnico remoto</label>
+      <br />
+      <input type="radio" name="servicio" id="asesoria" value="asesoria" />
+      <label for="asesoria">Asesoría técnica</label>
+
+      <br />
+
+      <br />
+      <h3>Presupuesto:</h3>
+
+      <input type="radio" name="presupuesto" id="hasta_50" value="hasta_50" />
+      <label for="hasta_50">hasta 50€</label>
+      <br />
+      <input type="radio" name="presupuesto" id="hasta_100" value="hasta_100" />
+      <label for="hasta_100">hasta 100€</label>
+      <br />
+      <input
+        type="radio"
+        name="presupuesto"
+        id="hasta_1000"
+        value="hasta_1000"
+      />
+      <label for="hasta_1000">hasta 1000€</label>
+      <br />
+
+      <label for="mensaje">Mensaje: </label>
+      <textarea name="mensaje" id="mensaje" rows="4" cols="50"></textarea>
+
+      <br />
+
+      <button type="submit">Contactar</button>
+    </form>
+
+    <br /><br /><br /><br /><br />
+  </body>
+</html>

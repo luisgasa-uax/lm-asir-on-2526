@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8"> <!-- Especifica el conjunto de caracteres -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- establece el zoom por defecto a la hora de mostrar la página en el navegador -->
+  <title>Pepe y Otilio Servicios IT</title>
+
+  <style>
+    /* Estilos CSS para la página */
+    img {
+      width: 50%;
+      /* Ajusta el ancho de la imagen al 50% del contenedor */
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Contenido visible de la página -->
+  <h1>Pepe y Otilio</h1> <!-- Título principal. Sólo puede haber un h1 por documento -->
+  <!-- Disponemos de títulos desde h2 hasta h6 -->
+  <h2>Servicios informáticos</h2>
+
+  <!-- Párrafo -->
+  <p>Somos <strong>profesionales</strong> especialistas en reparación, mantenimiento y soporte técnico de <em>sistemas
+      informáticos</em>.</p>
+
+  <br> <!-- Salto de línea -->
+
+  <!-- enlaces o links -->
+  <a href="https://codeshare.io/26-asir" target="_blank" rel="noopener noreferrer">Accede a nuestro CodeShare</a>
+
+  <!-- imagen -->
+  <img src="assets/img/pyo.jpg" alt="Foto de Pepe y Otilio">
+
+
+  <!-- imagen en/con enlace -->
+  <a href="https://www.uax.es" target="_blank" rel="noopener noreferrer">
+    <img src="assets/img/uax-fp.jpg" alt="Logo de la Universidad Alfonso X el Sabio">
+  </a>
+
+  <!-- Listas -->
+  <h2>Servicios</h2>
+
+  <ul> <!-- lista desordenada - unordered list -->
+    <li>Mantenimiento de Redes</li> <!-- list item -->
+    <li>Instalación de Software</li>
+    <li>Reparación de equipos informáticos</li>
+  </ul>
+
+  <ol type="i" start="7"> <!-- lista ordenada - ordered list -->
+    <li>Soporte Técnico</li>
+    <li>Consultoría IT</li>
+    <li>Formación en Tecnología</li>
+  </ol>
+
+  <!-- Tablas -->
+  <h2>Precios</h2>
+
+  <table border="1">
+    <tr> <!-- fila de tabla (table row) -->
+      <td>Servicio</td> <!-- celda de datos (table data) -->
+      <td>Precio</td>
+    </tr>
+
+    <tr>
+      <td>Mantenimiento de Redes</td>
+      <td>60€/hora</td>
+    </tr>
+
+    <tr>
+      <td>Instalación de Software</td>
+      <td>30€/hora</td>
+    </tr>
+
+    <tr>
+      <td>Reparación de equipos informáticos</td>
+      <td>40€/hora</td>
+    </tr>
+
+    <tr>
+      <td>Soporte Técnico</td>
+      <td>50€/hora</td>
+    </tr>
+
+    <tr>
+      <td>Consultoría IT</td>
+      <td>70€/hora</td>
+    </tr>
+
+    <tr>
+      <td>Formación en Tecnología</td>
+      <td>80€/hora</td>
+    </tr>
+
+  </table>
+
+  <!-- Formulario  -->
+  <h2>Contacto</h2>
+  <p>Dinos en qué podemos ayudarte</p>
+
+  <form action="receptor.php" method="GET">
+
+    <label for="nombre_id">Nombre: *</label>
+    <input type="text" name="nombre" id="nombre_id" required>
+
+    <br>
+
+    <label for="email_id">Email: *</label>
+    <input type="email" name="email" id="email_id" required>
+
+    <br>
+
+    <h3>Servicio de tu interés</h3>
+    <input type="radio" name="servicio" id="reparacion_id" value="reparacion">
+    <label for="reparacion_id">Reparación de equipos informáticos</label>
+
+    <input type="radio" name="servicio" id="mantenimiento_id" value="mantenimiento">
+    <label for="mantenimiento_id">Mantenimiento de Redes</label>
+
+    <h3>Presupuesto disponible</h3>
+    <input type="radio" name="presupuesto" id="100" value="100">
+    <label for="100">Hasta 100€</label>
+
+    <input type="radio" name="presupuesto" id="500" value="500">
+    <label for="500">Hasta 500€</label>
+
+    <br>
+    <input type="submit" value="Enviar">
+
+  </form>
+
+</body>
+
+</html>

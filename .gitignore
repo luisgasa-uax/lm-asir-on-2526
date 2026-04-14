@@ -27,3 +27,6 @@ planificacion_docente/
 
 
 *.ignorar.*
+
+# Entregas Alumnos
+alumnos/

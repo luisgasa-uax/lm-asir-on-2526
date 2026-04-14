@@ -1,0 +1,120 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="servidores">
+  <xs:complexType>
+    <xs:sequence>
+      
+      <xs:element name="servidor" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="nombre" type="xs:string" minOccurs="1" /> <!-- </xs:element> -->
+            <xs:element name="ip" type="xs:string" minOccurs="1" />
+            <!-- 
+            <xs:element name="ssoo" type="xs:string" minOccurs="1" maxOccurs="1" /> versión sin atributos
+            -->
+            <xs:element name="ssoo" minOccurs="1" maxOccurs="1"> <!-- versión con atributos -->
+              <xs:complexType> <!-- por que ssoo tiene atributos, aunque no tenga hijos -->
+                <xs:simpleContent>  <!-- por que no tiene hijos -->
+                  <xs:extension base="xs:string"> <!-- por que tiene contenido pero no tiene hijos. 
+                    Establecemos el tipo de datos del contenido mediante el atributo base -->
+                    <xs:attribute name="tipo" type="xs:string" use="optional" ></xs:attribute> <!-- use="optional" por que no es obligatorio en el XML -->
+                  </xs:extension>
+                </xs:simpleContent>
+              </xs:complexType>
+            </xs:element>
+
+
+            <!-- usuario: puede tomar dos posibles valores (root ó admin). Vamos a utilizar choice -->
+            <xs:element name="usuario"> 
+              <xs:complexType>
+                <xs:all>  <!-- permite cualquier orden -->
+                  <xs:element name="nombre" type="xs:string" />
+                  <xs:element name="rol">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:enumeration value="Developer" />
+                        <xs:enumeration value="SysAdmin" />
+                        <xs:enumeration value="CISO" />
+                        <xs:enumeration value="User" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="activo" type="xs:boolean" />
+                  <xs:element name="autenticacion">
+                    <xs:complexType>
+                      <xs:choice>
+                        <xs:element name="token" type="xs:string"></xs:element>
+                        <xs:element name="password" type="xs:string"></xs:element>
+                      </xs:choice>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:all>
+              </xs:complexType>
+
+
+            <!-- modificamos el usuario para cumpla lo siguiente:
+              - permita varios usuarios
+              - contenga un elemento nombre
+              - contenga un elemento rol con los siguientes posibles valores:
+                - Developer
+                - SysAdmin
+                - CISO
+                - User
+              - contenga un elemento "activo" de tipo booleano
+              - contenta un elemento "autenticacion" con dos posibles elementos:
+                - password con su valor 
+                - token con su valor
+              - LOS ELEMENTOS HIJOS DE "usuario" pueden presentarse en cualquier orden
+            -->
+              <xs:complexType>  <!-- al tener un choice, tiene que ser complexType -->
+                <xs:choice> <!-- abrimos la lista de posibles valores -->
+                  <xs:element name="root" />  
+                  <xs:element name="admin" />
+                  <xs:element name="Ligia" />
+                </xs:choice>
+              </xs:complexType>
+            </xs:element>
+
+            <xs:element name="password" minOccurs="1"> <!-- minOccurs="1" para que sea obligatoria -->
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <!-- forzamos a que la longitud de la contraseña sea mínimo 8 y máximo 20 caracteres -->
+                
+                  <xs:minLength value="8"></xs:minLength> 
+                  <xs:maxLength value="20"></xs:maxLength>
+
+                  <!-- TODO: a revisar la Expresión regular. -->
+                  <!-- <xs:pattern value="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9]{8,20}" /> -->
+                </xs:restriction>
+              </xs:simpleType>  
+            </xs:element>
+
+
+            <!-- PUERTOS válidos 1 hasta el 65535-->
+            <xs:element name="puerto">
+              <xs:simpleType>
+                <xs:restriction base="xs:int">
+                  <xs:minInclusive value="1"></xs:minInclusive>
+                  <xs:maxInclusive value="65535"></xs:maxInclusive>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+
+            <!-- FECHA DE INSTALACIÓN -->
+            <xs:element name="fecha-instalacion" type="xs:date"></xs:element>
+            <xs:element name="hora-instalacion" type="xs:time"></xs:element>
+
+            <!-- WEB ADMINISTRACIÓN -->
+            <xs:element name="web-administracion" type="xs:anyURI" ></xs:element>
+
+            <!-- incluir restricción email o restricción ip -->
+          </xs:sequence>
+          <xs:attribute name="id" type="xs:ID" use="required"></xs:attribute>
+        </xs:complexType>
+      </xs:element>
+
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+</xs:schema>

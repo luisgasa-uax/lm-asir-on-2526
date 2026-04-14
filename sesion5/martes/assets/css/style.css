@@ -1,0 +1,397 @@
+/* Esto es un comentario en CSS
+  Pueden ocupar varias líneas
+  No pueden anidarse, es decir, no se pueden escribir comentarios dentro de otros comentarios.
+*/
+
+/* 
+selector {
+  propiedad: valor;  
+}
+
+Siempre hay que terminar el valor de cada propiedad con un punto y coma, aunque sólo haya una propiedad.
+*/
+
+/* 
+TIPOS DE SELECTORES:
+  - Selectores BÁSICOS: seleccionan elementos por el nombre de su etiqueta.
+    - p
+    - h1
+    - img
+    - ...
+  - Selectores de ID: seleccionan elementos por su atributo id (utilizamos # para denotarlos en CSS), que es único en el documento.
+    - #logo
+    - #eslogan
+    - ...
+  
+  - Selectores de CLASE: seleccionan uno o varios elementos por su atributo class (utilizamos . para denotarlos en CSS), que puede repetirse en varios elementos.
+
+  Resumen: 
+  id → # → para un elemento único
+  class → . → para varios elementos con el mismo estilo
+
+*/
+
+
+/* ===== PALETA DE COLORES PROFESIONAL ===== */
+/* El selector root se utiliza para definir variables de CSS 
+  estas variables se pueden reutilizar en todo el documento, lo que facilita la gestión de los colores y otros estilos.
+*/
+:root {
+  /* Colores principales */
+  --color-primary: #1a56db; /* definimos la variable para el color principal
+  La sintaxis para definir una variable es: --nombre-variable: valor; 
+  */
+  --color-primary-dark: #1e40af;
+  --color-primary-light: #60a5fa;
+  
+  /* Colores secundarios */
+  --color-secondary: #0ea5e9;
+  --color-accent: #3b82f6;
+  
+  /* Colores neutrales */
+  --color-bg: #f8fafc;
+  --color-bg-card: #ffffff;
+  --color-text: #1e293b;
+  --color-text-light: #64748b;
+  --color-border: #e2e8f0;
+  
+  /* Colores de estado */
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  
+  /* Colores para hover/active */
+  --color-hover-bg: #f1f5f9;
+  --color-active: #1e40af;
+  
+  /* Sombras */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+/* Reset de márgenes y padding para que no aplique los valores por defecto del navegador */
+
+* {   
+  /* Utilizamos el selector universal asterisco, que selecciona todos los elementos */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Hace que el ancho y alto incluyan el padding y el borde */
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Establece la familia de fuentes */
+  margin: 20px; /* establece el margen del cuerpo del documento */
+  padding: 20px; /* establece el espacio entre el contenido del cuerpo y su borde */
+  /*background-color: #19a347;  establece el color de fondo 
+  color: #ffffff; /* establece el color del texto */
+
+  background-color: var(--color-bg); /* Utiliza la variable de color de fondo definida en :root */
+color: var(--color-text);   /* Utiliza la variable de color de texto definida en :root 
+                                La sitaxis para utilizar una variable es: var(--nombre-variable)
+                                De modo que si queremos utilizar el color de texto, escribimos: color: var(--color-text);
+                              */
+  line-height: 1.6; /* Establece la altura de línea para mejorar la legibilidad */
+}
+
+#logo {
+  width: 128px;   /* establece el ancho del logo */
+  display: block; /* convierte el logo en un elemento de bloque, lo que permite centrarlo con margin auto */
+  margin: 0 auto 20px; /* establece el margen superior e inferior del logo, y centra el logo horizontalmente */
+  border-radius: 12px;  /* Establece un borde redondeado de 12px alrededor del logo */
+  box-shadow: var(--shadow-sm); /* Aplica una sombra suave al logo utilizando la variable de sombra definida en :root */  
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Bauhaus 93", sans-serif;
+  letter-spacing: 3px;
+  color: var(--color-text); 
+  margin-bottom: 16px; /* establece el margen inferior de los encabezados */
+}
+
+h1 {
+  text-align: center; /* centra el texto del encabezado */
+  color: var(--color-primary); 
+  font-size: 2.5em; /* establece el tamaño de fuente del encabezado. La unidad em es relativa al tamaño de fuente del elemento padre */
+  margin-top: 20px; /* establece el margen superior del encabezado */
+}
+
+h2 {
+  color: var(--color-text);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);  /* Establece un fondo con un degradado lineal que va desde el color primario hasta el color secundario */
+  padding: 12px 20px; /* establece el espacio entre el contenido del elemento y su borde */
+  border-radius: 8px; /* Establece un borde redondeado de 8px */
+  margin-top: 40px;   
+  margin-bottom: 20px;
+  border: none;     /* Elimina cualquier borde predeterminado */
+  color: white;
+}
+
+p {
+  color: var(--color-text);
+  margin-bottom: 16px;
+}
+
+#eslogan {
+  font-style: italic; /* Establece el estilo de fuente en cursiva */
+  font-size: 1.2em;
+  color: var(--color-primary);
+  text-align: center; /* centra el texto del eslogan */
+  padding: 20px;
+  background: linear-gradient(135deg, var(--color-primary-light) 0%, #dbeafe 100%);
+  border-radius: 12px;
+  margin: 20px 0;
+}
+
+/* Menú de navegación */
+/* Una cosa interesante que podemos hacer en el CSS es ir incorporando las reglas a aplicar en el orden de aparición de los elementos o secciones de la página */
+nav {
+  background-color: var(--color-bg-card);
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  padding: 10px;
+  margin-bottom: 30px;
+  position: sticky; /* hace que el menú se quede fijo en la parte superior de la ventana al hacer scroll */
+  top: 10px;  /* fija el menú a 10px del borde superior de la ventana */
+  z-index: 2; /* Asegura que el menú esté por encima de otros elementos */
+}
+
+nav ul {
+  display: flex;  /* convierte el contenedor en un contenedor flexbox */
+  gap: 20px;      /* agrega un espacio de 20px entre los elementos del menú */
+  justify-content: center;  /* centra los elementos horizontalmente */
+  align-items: center;      /* centra los elementos dentro del contenedor flexbox */
+  flex-wrap: wrap;          /* permite que los elementos se envuelvan a la siguiente línea si no caben en una sola línea */
+}
+
+nav ul li {
+  list-style: none; /* elimina los puntos de las listas */
+  padding: 8px 16px;  /* establece el espacio entre el contenido y el borde del elemento */
+  border-radius: 8px; 
+  transition: all 0.3s ease;  /* agrega una transición (una especie de animación) suave para todas las propiedades, con una duración de 0.3 segundos y una función de tiempo de ease */
+}
+
+nav li:hover {
+  background-color: var(--color-hover-bg);
+  transform: translateY(-2px);  /* mueve el elemento hacia arriba 2px al pasar el mouse por encima */
+}
+
+.enlace-menu {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 500;   /* establece el grosor de la fuente */
+  transition: color 0.3s ease;  /* agrega una transición suave para la propiedad color, con una duración de 0.3 segundos y una función de tiempo de ease */
+}
+
+.enlace-menu:hover { /* se aplica al pasar el mouse por encima del enlace */
+  color: var(--color-primary);
+}
+
+
+/* Tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;  /* elimina los espacios entre las celdas de la tabla */
+  background-color: var(--color-bg-card);
+  border-radius: 12px;
+  overflow: hidden; /* asegura que el borde redondeado se aplique correctamente a la tabla */
+  box-shadow: var(--shadow-md); /* aplica una sombra alrededor de la tabla */
+  margin: 20px 0;
+}
+
+th, td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);   /* aplica un borde inferior al las celdas de la tabla */
+}
+
+th {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%); /* Establece un fondo con un degradado lineal que va desde el color primario hasta el color secundario */
+  color: white;
+  font-weight: 600;
+}
+
+tr:hover {
+  background-color: var(--color-hover-bg);
+}
+
+tfoot {
+  background-color: var(--color-hover-bg);
+  font-weight: bold;  /* establece el grosor de la fuente a negrita */
+}
+
+/* Colaboradores */
+.colaborador {
+  width: 200px;
+  display: inline-block;  /* aplica un estilo de visualización en línea. Es decir, los elementos se mostrarán uno al lado del otro */
+  margin: 10px;
+  padding: 20px;
+  background-color: var(--color-bg-card);
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;  /* agrega una transición suave para las propiedades transform y box-shadow */
+}
+
+.colaborador:hover {
+  transform: translateY(-5px);  /* mueve el elemento hacia arriba 5px al pasar el mouse por encima */
+  box-shadow: var(--shadow-lg);
+}
+
+.colaborador img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.colaborador {
+  width: 200px; /* establece el ancho del contenedor del colaborador */
+}
+
+.colaborador img { /* selecciona todas las imágenes dentro de los contenedores de clase colaborador */
+  width: 100%; /* establece el ancho de las imágenes al 100% del contenedor */
+}
+
+
+/* Formulario */
+form {
+  background-color: var(--color-bg-card);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  max-width: 600px; /* establece el ancho máximo del formulario */
+  margin: 20px 0;
+}
+
+label {
+  display: inline-block;  /* aplica un estilo de visualización en línea */
+  margin: 10px 0 5px;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+input[type="text"],   /* selecciona los campos de texto */
+input[type="email"],  /* selecciona los campos de correo electrónico */
+textarea {            /* selecciona las áreas de texto */
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 15px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-family: inherit;
+  transition: border-color 0.3s ease; /* agrega una transición suave para la propiedad border-color */
+}
+
+input[type="text"]:focus,   /* aplica estilo al enfocar el campo de texto */
+input[type="email"]:focus,  /* aplica estilo al enfocar el campo de correo electrónico */
+textarea:focus {            /* aplica estilo al enfocar el área de texto */
+  outline: none;            /* elimina el contorno del campo enfocado */
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(26, 86, 219, 0.1);
+}
+
+input[type="radio"] {     /* selecciona los botones de opción o radiobuttons */
+  margin: 10px 5px 10px 0;
+}
+
+button[type="submit"] {   /* selecciona los botones de envío */
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%); /* establece un fondo con un degradado lineal */
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;      /* establece el cursor o puntero del ratón como una mano al pasar el mouse por encima */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;  /* agrega una transición suave para las propiedades transform y box-shadow */
+  margin-top: 20px;
+}
+
+button[type="submit"]:hover {   /* aplica estilo al pasar el mouse por encima */
+  transform: translateY(-2px);  /* mueve el elemento hacia arriba 2px al pasar el mouse por encima */
+  box-shadow: var(--shadow-md);
+}
+
+button[type="submit"]:active {  /* aplica estilo al hacer clic en el botón */
+  transform: translateY(0);     /* vuelve a la posición original al hacer clic */
+}
+
+
+
+/* Enlaces */
+a {
+  color: var(--color-primary);
+  text-decoration: none;    /* elimina el subrayado de los enlaces */
+  transition: color 0.3s ease;
+}
+
+a:hover {   /* aplica estilo al pasar el mouse por encima */
+  color: var(--color-primary-dark);
+  text-decoration: underline; /* agrega un subrayado a los enlaces al pasar el mouse por encima */
+}
+
+
+
+/* Imagen del técnico */
+body > img[src*="ssii"] {   /* selecciona la imagen del técnico */
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  margin: 20px 0;
+  display: block;   /* convierte la imagen en un elemento de bloque, lo que permite centrarla con margin auto */
+}
+
+/* Listas */
+ul, ol {
+  margin: 16px 0;
+  padding-left: 24px;
+}
+
+li {
+  margin: 8px 0;
+  color: var(--color-text);
+}
+
+
+/* Responsive 
+  Utilizamos una media query para aplicar estilos específicos cuando el ancho de la pantalla sea menor o igual a 768px, lo que es común para dispositivos móviles.
+  Este sistema de diseño se conoce como diseño responsive o adaptativo, y permite que la página web se vea bien en diferentes tamaños de pantalla, desde computadoras de escritorio hasta teléfonos móviles.
+
+*/
+@media (max-width: 768px) {   
+  body {
+    padding: 10px;
+  }
+  
+  nav ul {
+    gap: 5px;
+  }
+  
+  nav ul li {
+    padding: 5px 10px;
+  }
+  
+  h1 {
+    font-size: 1.8em;
+  }
+  
+  table {
+    font-size: 14px;
+  }
+  
+  form {
+    padding: 20px;
+  }
+}
+
+
+/* Media Query para modo oscuro */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #0f172a;
+    --color-bg-card: #1e293b;
+    --color-text: #f1f5f9;
+    --color-text-light: #94a3b8;
+    --color-border: #334155;
+  }
+}
