@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Especifica el conjunto de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- establece el zoom por defecto a la hora de mostrar la página en el navegador -->
+    <title>Pepe y Otilio Servicios IT</title>
+
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <!-- Enlace a un archivo CSS externo (si lo hubiera) -->
+
+    <!-- Estilos CSS internos para la página
+        ESTO ES CACA
+  -->
+    <!-- 
+    <style>
+      /* Estilos CSS para la página */
+      img {
+        width: 50%;
+        /* Ajusta el ancho de la imagen al 50% del contenedor */
+      }
+      
+      h2 {
+        background-color: brown; 
+        color:bisque;
+      }
+    </style>
+    -->
+  </head>
+
+  <body>
+    <!-- Contenido visible de la página -->
+
+    <header>
+      <img src="assets/img/pyo.jpg" alt="Foto de Pepe y Otilio" id="logo" />
+      <h1>Pepe y Otilio</h1>
+      <!-- Título principal. Sólo puede haber un h1 por documento -->
+      <!-- Disponemos de títulos desde h2 hasta h6 -->
+    </header>
+
+    <nav>
+      <!-- contenedor que agrupa los enlaces de navegación o menú -->
+      <ul>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#precios">Precios</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <h2>Servicios informáticos</h2>
+    <!-- Párrafo -->
+    <p class="audiowide-regular">
+      Somos <strong>profesionales</strong> especialistas en reparación,
+      mantenimiento y soporte técnico de <em>sistemas informáticos</em>.
+    </p>
+
+    <br />
+    <!-- Salto de línea -->
+
+    <!-- enlaces o links -->
+    <a
+      href="https://codeshare.io/26-asir"
+      target="_blank"
+      rel="noopener noreferrer"
+      >Accede a nuestro CodeShare</a
+    >
+
+    <!-- imagen -->
+    <img src="assets/img/pyo.jpg" alt="Foto de Pepe y Otilio" />
+
+    <!-- imagen en/con enlace -->
+    <a href="https://www.uax.es" target="_blank" rel="noopener noreferrer">
+      <img
+        src="assets/img/uax-fp.jpg"
+        alt="Logo de la Universidad Alfonso X el Sabio"
+      />
+    </a>
+
+    <!-- Listas -->
+    <h2 id="servicios">Servicios</h2>
+
+    <ul>
+      <!-- lista desordenada - unordered list -->
+      <li>Mantenimiento de Redes</li>
+      <!-- list item -->
+      <li>Instalación de Software</li>
+      <li>Reparación de equipos informáticos</li>
+    </ul>
+
+    <ol type="i" start="1">
+      <!-- lista ordenada - ordered list -->
+      <li>Soporte Técnico</li>
+      <li>Consultoría IT</li>
+      <li>Formación en Tecnología</li>
+    </ol>
+
+    <!-- Tablas -->
+    <h2 id="precios">Precios</h2>
+
+    <table border="1">
+      <thead>
+        <!-- encabezado de tabla -->
+        <tr>
+          <!-- fila de tabla (table row) -->
+          <th>Servicio</th>
+          <th>Precio</th>
+        </tr>
+      </thead>
+
+      <tr>
+        <td>Mantenimiento de Redes</td>
+        <!-- celda de datos (table data) -->
+        <td>60<span class="precio-tabla">€/hora</span></td>
+        <!-- la etiqueta span la utilizamos para aplicar estilos específicos a un fragmento de texto -->
+      </tr>
+
+      <tr>
+        <td>Instalación de Software</td>
+        <td>30<span class="precio-tabla">€/hora</span></td>
+      </tr>
+
+      <tr>
+        <td>Reparación de equipos informáticos</td>
+        <td>40<span class="precio-tabla">€/hora</span></td>
+      </tr>
+
+      <tr>
+        <td>Soporte Técnico</td>
+        <td>50<span class="precio-tabla">€/hora</span></td>
+      </tr>
+
+      <tr>
+        <td>Consultoría IT</td>
+        <td>70<span class="precio-tabla">€/hora</span></td>
+      </tr>
+
+      <tr>
+        <td>Formación en Tecnología</td>
+        <td>80<span class="precio-tabla">€/hora</span></td>
+      </tr>
+    </table>
+
+    <!-- Formulario  -->
+    <h2 id="contacto">Contacto</h2>
+    <p>Dinos en qué podemos ayudarte</p>
+
+    <form action="receptor.php" method="GET">
+      <div class="form-group form-text">
+        <label for="nombre_id">Nombre: *</label>
+        <input type="text" name="nombre" id="nombre_id" required />
+      </div>
+      <!-- <br> -->
+
+      <div class="form-group form-text">
+        <label for="email_id">Email: *</label>
+        <input type="email" name="email" id="email_id" required />
+      </div>
+
+      <!-- <br> -->
+
+      <h3>Servicio de tu interés</h3>
+      <div class="form-group">
+        <input
+          type="radio"
+          name="servicio"
+          id="reparacion_id"
+          value="reparacion"
+        />
+        <label for="reparacion_id">Reparación de equipos informáticos</label>
+      </div>
+
+      <div class="form-group">
+        <input
+          type="radio"
+          name="servicio"
+          id="mantenimiento_id"
+          value="mantenimiento"
+        />
+        <label for="mantenimiento_id">Mantenimiento de Redes</label>
+      </div>
+
+      <h3>Presupuesto disponible</h3>
+      <div class="form-group">
+        <input type="radio" name="presupuesto" id="100" value="100" />
+        <label for="100">Hasta 100€</label>
+      </div>
+
+      <div class="form-group">
+        <input type="radio" name="presupuesto" id="500" value="500" />
+        <label for="500">Hasta 500€</label>
+      </div>
+      <!-- <br> -->
+      <input type="submit" value="Enviar" />
+    </form>
+  </body>
+</html>
