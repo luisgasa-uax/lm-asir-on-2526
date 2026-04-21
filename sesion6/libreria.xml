@@ -1,0 +1,92 @@
+<libreria>
+    <libro id="L1" categoria="novela">
+        <titulo>La sombra del viento</titulo>
+        <autor>Carlos Ruiz Zafón</autor>
+        <anio>2001</anio>
+        <precio moneda="EUR">19.95</precio>
+    </libro>
+
+    <libro id="L2" categoria="fantasia">
+        <titulo>El nombre del viento</titulo>
+        <autor>Patrick Rothfuss</autor>
+        <anio>2007</anio>
+        <precio moneda="USD">14.50</precio>
+    </libro>
+
+    <libro id="L3" categoria="novela">
+        <titulo>1984</titulo>
+        <autor>George Orwell</autor>
+        <anio>1949</anio>
+        <precio moneda="EUR">9.99</precio>
+    </libro>
+
+    <libro id="L4" categoria="ensayo">
+        <titulo>Sapiens</titulo>
+        <autor>Yuval Noah Harari</autor>
+        <anio>2011</anio>
+        <precio moneda="EUR">22.00</precio>
+    </libro>
+</libreria>
+
+
+
+
+<!-- 
+EJERCICIOS XPATH
+
+### 1) **Consultas simples**
+1. Selecciona todos los nodos `<libro>`  
+   `//libro`
+2. Selecciona todos los títulos  
+   `//titulo`
+3. Selecciona el nodo raíz  
+   `/libreria`
+
+
+
+### 2) **Búsqueda exacta**
+1. Selecciona el libro cuyo título es exactamente “1984”  
+   `//libro[titulo="1984"]`
+2. Selecciona el autor cuyo nombre es exactamente “Patrick Rothfuss”  
+   `//autor[text()="Patrick Rothfuss"]`
+
+
+### 3) **Búsqueda global (en cualquier nivel)**
+1. Selecciona todos los nodos llamados `precio` sin importar dónde estén  
+   `//precio`
+2. Selecciona todos los nodos que tengan un atributo `moneda`  
+   `//*[@moneda]`
+
+
+### 4) **Filtro por posición**
+1. Selecciona el primer libro  
+   `//libro[1]`
+2. Selecciona el segundo título  
+   `//titulo[2]`
+3. Selecciona los dos primeros libros  
+   `//libro[position() <= 2]`
+
+
+### 5) **Filtro por último elemento**
+1. Selecciona el último libro  
+   `//libro[last()]`
+2. Selecciona el último precio  
+   `//precio[last()]`
+
+
+### 6) **Filtro por valor de nodo**
+1. Selecciona libros publicados después del año 2000  
+   `//libro[anio > 2000]`
+2. Selecciona libros cuyo precio sea mayor a 15  
+   `//libro[precio > 15]`
+
+
+### 7) **Filtro por valor de atributo**
+1. Selecciona libros de categoría “novela”  
+   `//libro[@categoria="novela"]`
+2. Selecciona precios cuya moneda sea EUR  
+   `//precio[@moneda="EUR"]`
+3. Selecciona el libro con id “L2”  
+   `//libro[@id="L2"]`
+
+-->

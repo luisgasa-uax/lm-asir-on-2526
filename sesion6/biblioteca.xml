@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<biblioteca>
+
+    <libro id="l01" categoria="programacion">
+        <titulo>Aprende Java</titulo>
+        <autor>Juan Pérez</autor>
+        <precio>29.99</precio>
+        <anio>2020</anio>
+    </libro>
+
+    <libro id="l02" categoria="web">
+        <titulo>HTML y CSS</titulo>
+        <autor>Ana García</autor>
+        <precio>19.99</precio>
+        <anio>2021</anio>
+    </libro>
+
+    <libro id="l03" categoria="programacion">
+        <titulo>Python desde cero</titulo>
+        <autor>Luis Torres</autor>
+        <precio>25.50</precio>
+        <anio>2019</anio>
+    </libro>
+
+    <libro id="l04" categoria="bases de datos">
+        <titulo>SQL avanzado</titulo>
+        <autor>María López</autor>
+        <precio>34.00</precio>
+        <anio>2018</anio>
+    </libro>
+
+</biblioteca>
