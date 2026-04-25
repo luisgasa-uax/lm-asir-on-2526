@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="infraestructura.xsl" type="text/xsl"?>
+
+<infraestructura>
+    
+    <servidor id="srv01" tipo="web">
+        <nombre>Servidor Web Principal</nombre>
+        <ip>192.168.1.10</ip>
+        <estado>activo</estado>
+        
+        <servicios>
+            <servicio>
+                <nombre>nginx</nombre>
+                <puerto>80</puerto>
+                <protocolo>http</protocolo>
+                <estado>activo</estado>
+            </servicio>
+            
+            <servicio>
+                <nombre>ssh</nombre>
+                <puerto>22</puerto>
+                <protocolo>tcp</protocolo>
+                <estado>activo</estado>
+            </servicio>
+        </servicios>
+    </servidor>
+
+    <servidor id="srv02" tipo="bbdd">
+        <nombre>Servidor Base de Datos</nombre>
+        <ip>192.168.1.20</ip>
+        <estado>activo</estado>
+        
+        <servicios>
+            <servicio>
+                <nombre>mysql</nombre>
+                <puerto>3306</puerto>
+                <protocolo>tcp</protocolo>
+                <estado>activo</estado>
+            </servicio>
+        </servicios>
+    </servidor>
+
+    <servidor id="srv03" tipo="ftp">
+        <nombre>Servidor FTP</nombre>
+        <ip>192.168.1.30</ip>
+        <estado>mantenimiento</estado>
+        
+        <servicios>
+            <servicio>
+                <nombre>ftp</nombre>
+                <puerto>21</puerto>
+                <protocolo>tcp</protocolo>
+                <estado>detenido</estado>
+            </servicio>
+        </servicios>
+    </servidor>
+
+    <usuarios>
+        <usuario id="u01" rol="admin">
+            <nombre>Ana</nombre>
+            <activo>true</activo>
+        </usuario> 
+        
+        <usuario id="u02" rol="tecnico">
+            <nombre>Alberto</nombre>
+            <activo>true</activo>
+        </usuario>
+        
+        <usuario id="u03" rol="invitado">
+            <nombre>Carlos</nombre>
+            <activo>false</activo>
+        </usuario>
+    </usuarios>
+
+</infraestructura>
